@@ -50,16 +50,43 @@
     footer a:hover {
       text-decoration: underline;
     }
+    .youtube-button {
+      margin-top: 20px;
+      display: inline-block;
+    }
+    .embed-video {
+      margin-top: 30px;
+    }
   </style>
 </head>
 <body>
 
   <h1>유튜브 자막 추출기</h1>
+
   <form method="POST">
     <input type="text" name="url" placeholder="유튜브 링크를 입력하세요" required>
     <button type="submit">자막 다운로드</button>
   </form>
 
+  <!-- 개발자 유튜브 채널 버튼 -->
+  <div class="youtube-button">
+    <a href="https://www.youtube.com/@ai_ieum" target="_blank">
+      <button style="background-color: #ff0000; color: white;">개발자 유튜브 채널 방문하기</button>
+    </a>
+  </div>
+
+  <!-- 유튜브 영상 임베드 -->
+  <div class="embed-video">
+    <h3>🔥 최신 영상 소개</h3>
+    <iframe width="100%" height="400"
+      src="https://www.youtube.com/embed/w-_45ib4HyU"
+      title="YouTube video player" frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <!-- 하단 메뉴 -->
   <footer>
     <a href="/about">About</a> |
     <a href="/privacy">Privacy</a> |
@@ -69,3 +96,4 @@
 
 </body>
 </html>
+
