@@ -2,13 +2,70 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <title>유튜브 자막 추출기</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="유튜브 자막을 손쉽게 추출해보세요. TalkTime은 무료 자막 다운로드 도구입니다.">
+  <title>유튜브 자막 추출기 - TalkTime</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+      background: #f8f9fa;
+      color: #333;
+    }
+    h1 {
+      color: #1a73e8;
+    }
+    input[type="text"] {
+      padding: 10px;
+      width: 100%;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      background-color: #1a73e8;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0c59cf;
+    }
+    footer {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #ccc;
+      text-align: center;
+      font-size: 14px;
+    }
+    footer a {
+      margin: 0 8px;
+      text-decoration: none;
+      color: #555;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+
   <h1>유튜브 자막 추출기</h1>
   <form method="POST">
-    <input type="text" name="url" placeholder="유튜브 링크를 입력하세요" size="50" required>
+    <input type="text" name="url" placeholder="유튜브 링크를 입력하세요" required>
     <button type="submit">자막 다운로드</button>
   </form>
+
+  <footer>
+    <a href="/about">About</a> |
+    <a href="/privacy">Privacy</a> |
+    <a href="/terms">Terms</a> |
+    <a href="/contact">Contact</a>
+  </footer>
+
 </body>
 </html>
