@@ -6,54 +6,87 @@
   <meta name="description" content="유튜브 자막을 손쉽게 추출해보세요. TalkTime은 무료 자막 다운로드 도구입니다.">
   <title>유튜브 자막 추출기 - TalkTime</title>
   <style>
+    :root {
+      --bg-color: #f8f9fa;
+      --text-color: #333;
+      --input-bg: #fff;
+      --input-border: #ccc;
+      --button-bg: #1a73e8;
+      --button-hover: #0c59cf;
+      --footer-color: #555;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg-color: #121212;
+        --text-color: #e0e0e0;
+        --input-bg: #1e1e1e;
+        --input-border: #444;
+        --button-bg: #bb86fc;
+        --button-hover: #985eff;
+        --footer-color: #aaa;
+      }
+    }
+
     body {
       font-family: Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       max-width: 700px;
       margin: 40px auto;
       padding: 0 20px;
-      background: #f8f9fa;
-      color: #333;
     }
+
     h1 {
-      color: #1a73e8;
+      color: var(--text-color);
     }
+
     input[type="text"] {
       padding: 10px;
       width: 100%;
       margin-bottom: 10px;
-      border: 1px solid #ccc;
+      border: 1px solid var(--input-border);
       border-radius: 4px;
+      background-color: var(--input-bg);
+      color: var(--text-color);
     }
+
     button {
-      background-color: #1a73e8;
+      background-color: var(--button-bg);
       color: white;
       padding: 10px 20px;
       border: none;
       border-radius: 4px;
       cursor: pointer;
     }
+
     button:hover {
-      background-color: #0c59cf;
+      background-color: var(--button-hover);
     }
+
     footer {
       margin-top: 40px;
       padding-top: 20px;
-      border-top: 1px solid #ccc;
+      border-top: 1px solid var(--input-border);
       text-align: center;
       font-size: 14px;
     }
+
     footer a {
       margin: 0 8px;
       text-decoration: none;
-      color: #555;
+      color: var(--footer-color);
     }
+
     footer a:hover {
       text-decoration: underline;
     }
+
     .youtube-button {
       margin-top: 20px;
       display: inline-block;
     }
+
     .embed-video {
       margin-top: 30px;
     }
@@ -71,7 +104,9 @@
   <!-- 개발자 유튜브 채널 버튼 -->
   <div class="youtube-button">
     <a href="https://www.youtube.com/@ai_ieum" target="_blank">
-      <button style="background-color: #ff0000; color: white;">개발자 유튜브 채널 방문하기</button>
+      <button style="margin-top: 15px; background-color: #ff0000; color: white;">
+        개발자 유튜브 채널 방문하기
+      </button>
     </a>
   </div>
 
@@ -96,4 +131,5 @@
 
 </body>
 </html>
+
 
