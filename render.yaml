@@ -7,8 +7,7 @@ services:
     startCommand: gunicorn app:app
     envVars:
       - key: FLASK_ENV
-<<<<<<< HEAD
+
         value: production
-=======
         value: production
->>>>>>> 3afcbf25812475dd592aa5d4b0062bcd8f12719d
+
