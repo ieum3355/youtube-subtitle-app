@@ -1,6 +1,4 @@
 User-agent: *
 Disallow:
-
-
 Sitemap: https://talktime.shop/sitemap.xml
 
