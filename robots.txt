@@ -1,8 +1,6 @@
 User-agent: *
 Disallow:
 
-<<<<<<< HEAD
+
 Sitemap: https://talktime.shop/sitemap.xml
-=======
-Sitemap: https://talktime.shop/sitemap.xml
->>>>>>> 3afcbf25812475dd592aa5d4b0062bcd8f12719d
+
