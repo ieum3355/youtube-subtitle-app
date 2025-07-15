@@ -72,6 +72,15 @@
       margin-right: 10px;
       font-size: 13px;
     }
+
+    .alert {
+      margin-top: 20px;
+      padding: 12px;
+      background-color: #fef2f2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      border-radius: 6px;
+    }
   </style>
 
   <script>
@@ -87,6 +96,13 @@
     <input type="text" name="url" placeholder="유튜브 링크를 붙여넣으세요" required style="width: 300px; padding: 5px;" />
     <button type="submit">자막 다운로드</button>
   </form>
+
+  <!-- ✅ 오류 메시지 표시 -->
+  {% if message %}
+    <div class="alert">
+      {{ message }}
+    </div>
+  {% endif %}
 
   <!-- ✅ 유튜브 임베드 영상 -->
   <iframe src="https://www.youtube.com/embed/w-_45ib4HyU" allowfullscreen></iframe>
@@ -117,4 +133,5 @@
   </footer>
 </body>
 </html>
+
 
