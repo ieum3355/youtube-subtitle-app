@@ -1,3 +1,4 @@
+
 from flask import Flask, request, render_template, send_file, Response
 import os
 import uuid
@@ -40,13 +41,10 @@ def index():
 
     return render_template("index.html", message=message)
 
+# ✅ 기본 페이지들
 @app.route("/about")
 def about():
     return render_template("about.html")
-
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
 
 @app.route("/privacy")
 def privacy():
@@ -56,6 +54,11 @@ def privacy():
 def terms():
     return render_template("terms.html")
 
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+# ✅ 다국어 페이지
 @app.route("/index_en.html")
 def index_en():
     return render_template("index_en.html")
@@ -64,6 +67,39 @@ def index_en():
 def index_jp():
     return render_template("index_jp.html")
 
+@app.route("/about_en")
+def about_en():
+    return render_template("about_en.html")
+
+@app.route("/about_jp")
+def about_jp():
+    return render_template("about_jp.html")
+
+@app.route("/privacy_en")
+def privacy_en():
+    return render_template("privacy_en.html")
+
+@app.route("/privacy_jp")
+def privacy_jp():
+    return render_template("privacy_jp.html")
+
+@app.route("/terms_en")
+def terms_en():
+    return render_template("terms_en.html")
+
+@app.route("/terms_jp")
+def terms_jp():
+    return render_template("terms_jp.html")
+
+@app.route("/contact_en")
+def contact_en():
+    return render_template("contact_en.html")
+
+@app.route("/contact_jp")
+def contact_jp():
+    return render_template("contact_jp.html")
+
+# ✅ robots.txt 직접 서빙
 @app.route("/robots.txt")
 def robots():
     lines = [
@@ -73,16 +109,15 @@ def robots():
     ]
     return Response("\n".join(lines), mimetype="text/plain")
 
-@app.route("/sitemap.xml", methods=["GET"])
+# ✅ sitemap.xml 자동 생성
+@app.route("/sitemap.xml")
 def sitemap():
     pages = [
-        '/',
-        '/index_en.html',
-        '/index_jp.html',
-        '/about',
-        '/privacy',
-        '/terms',
-        '/contact'
+        '/', '/index_en.html', '/index_jp.html',
+        '/about', '/about_en', '/about_jp',
+        '/privacy', '/privacy_en', '/privacy_jp',
+        '/terms', '/terms_en', '/terms_jp',
+        '/contact', '/contact_en', '/contact_jp'
     ]
 
     base_url = "https://talktime.shop"
@@ -105,4 +140,3 @@ def sitemap():
 
 if __name__ == "__main__":
     app.run(debug=True)
-
