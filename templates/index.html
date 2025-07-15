@@ -5,20 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>유튜브 자막 추출기</title>
 
-  <!-- ✅ SEO 메타태그 -->
+  <!-- ✅ SEO -->
   <meta name="description" content="유튜브 영상의 자막을 쉽게 추출하세요. 자막 다운로드 무료 도구.">
   <meta name="keywords" content="유튜브 자막 다운로드, 유튜브 자막 추출기, SRT 변환">
-  <meta name="author" content="talktime.shop">
-
-  <!-- ✅ Open Graph (OG) 이미지 제거 -->
-  <meta property="og:title" content="유튜브 자막 추출기" />
-  <meta property="og:description" content="유튜브 자막은 여기에서, 무료로 빠르게 추출하세요." />
-  <meta property="og:url" content="https://talktime.shop/" />
+  <meta name="author" content="youtube-subtitle-app">
 
   <!-- ✅ Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="유튜브 자막 추출기" />
-  <meta name="twitter:description" content="유튜브 자막은 여기에서" />
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="유튜브 자막 추출기">
+  <meta name="twitter:description" content="유튜브 자막은 여기에서">
+
+  <!-- ✅ 다국어 자동 감지 스크립트 -->
+  <script>
+    const lang = navigator.language || navigator.userLanguage;
+    if (window.location.pathname === "/" || window.location.pathname === "/index.html") {
+      if (lang.startsWith("en")) {
+        window.location.href = "/index_en.html";
+      } else if (lang.startsWith("ja")) {
+        window.location.href = "/index_jp.html";
+      }
+    }
+  </script>
 
   <style>
     body {
@@ -63,24 +70,6 @@
       border: none;
       margin-top: 20px;
     }
-
-    .lang-switch {
-      margin-top: 10px;
-    }
-
-    .lang-switch a {
-      margin-right: 10px;
-      font-size: 13px;
-    }
-
-    .alert {
-      margin-top: 20px;
-      padding: 12px;
-      background-color: #fef2f2;
-      color: #991b1b;
-      border: 1px solid #fca5a5;
-      border-radius: 6px;
-    }
   </style>
 
   <script>
@@ -90,6 +79,22 @@
   </script>
 </head>
 <body>
+  <!-- ✅ 공통 네비게이션 -->
+  <nav style="margin-bottom: 20px;">
+    <a href="/" style="margin-right: 10px;">🏠 홈</a>
+    <a href="/about">소개</a> |
+    <a href="/privacy">개인정보</a> |
+    <a href="/terms">이용약관</a> |
+    <a href="/speech-timer" style="margin-left: 10px;">⏱ 발표시간 계산기</a>
+
+    <span style="float: right;" class="lang-switch">
+      🌐 언어:
+      <a href="/index.html">한국어</a> |
+      <a href="/index_en.html">English</a> |
+      <a href="/index_jp.html">日本語</a>
+    </span>
+  </nav>
+
   <h1>유튜브 자막 추출기</h1>
 
   <form method="POST">
@@ -97,27 +102,14 @@
     <button type="submit">자막 다운로드</button>
   </form>
 
-  <!-- ✅ 오류 메시지 표시 -->
-  {% if message %}
-    <div class="alert">
-      {{ message }}
-    </div>
-  {% endif %}
-
   <!-- ✅ 유튜브 임베드 영상 -->
   <iframe src="https://www.youtube.com/embed/w-_45ib4HyU" allowfullscreen></iframe>
 
-  <!-- ✅ 버튼으로 유튜브 채널 연결 -->
+  <!-- ✅ 개발자 유튜브 버튼 -->
   <div style="margin-top: 20px;">
     <a href="https://www.youtube.com/@ai_ieum" target="_blank">
       <button>개발자 유튜브 보기</button>
     </a>
-  </div>
-
-  <!-- ✅ 다국어 링크 -->
-  <div class="lang-switch">
-    <a href="/index_en.html">English</a>
-    <a href="/index_jp.html">日本語</a>
   </div>
 
   <!-- ✅ 다크모드 토글 -->
