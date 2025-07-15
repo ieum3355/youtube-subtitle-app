@@ -8,31 +8,37 @@ app = Flask(__name__)
 
 @app.route("/", methods=["GET", "POST"])
 def index():
+    message = None
     if request.method == "POST":
         video_url = request.form["url"]
         subtitle_filename = f"{uuid.uuid4()}.srt"
+        cookie_path = os.path.join(os.getcwd(), "youtube.com_cookies.txt")
 
         ydl_opts = {
             'writesubtitles': True,
             'subtitlesformat': 'srt',
             'skip_download': True,
             'outtmpl': subtitle_filename,
-            'cookiefile': 'youtube.com_cookies.txt'  # ✅ 쿠키 파일 지정
         }
+
+        if os.path.exists(cookie_path):
+            ydl_opts["cookiefile"] = cookie_path
 
         try:
             with yt_dlp.YoutubeDL(ydl_opts) as ydl:
                 info = ydl.extract_info(video_url, download=True)
                 if not info.get("requested_subtitles"):
-                    return "⚠️ 자막을 찾을 수 없습니다."
+                    message = "⚠️ 자막이 없는 영상입니다. (또는 비공개/연령제한 영상일 수 있습니다)"
+                    return render_template("index.html", message=message)
                 return send_file(subtitle_filename, as_attachment=True)
         except Exception as e:
-            return f"❌ 오류 발생: {e}"
+            message = f"❌ 오류 발생: {e}"
+            return render_template("index.html", message=message)
         finally:
             if os.path.exists(subtitle_filename):
                 os.remove(subtitle_filename)
 
-    return render_template("index.html")
+    return render_template("index.html", message=message)
 
 @app.route("/about")
 def about():
@@ -99,3 +105,4 @@ def sitemap():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
