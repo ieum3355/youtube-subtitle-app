@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>利用規約 - YouTube字幕ダウンローダー</title>
-</head>
-<body>
-  <h1>利用規約</h1>
-  <p>YouTube字幕ダウンローダー（youtube-subtitle-app）は、YouTubeの字幕機能をもとに動作します。</p>
-  <p>ユーザーは著作権の範囲内で本ツールを使用する必要があります。</p>
-  <p>第三者の権利を侵害した場合、すべての責任はユーザーにあります。</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}利用規約 - YouTube字幕ダウンローダー{% endblock %}
+{% block content %}
+<h1>利用規約</h1>
+<p>本サービスは非商用利用のために提供され、ユーザーは著作権法を遵守する必要があります。</p>
+<p>字幕のダウンロードはユーザーの責任です。</p>
+{% endblock %}
+
