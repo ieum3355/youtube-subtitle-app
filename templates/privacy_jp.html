@@ -1,12 +1,7 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>プライバシーポリシー - YouTube字幕ダウンローダー</title>
-</head>
-<body>
-  <h1>プライバシーポリシー</h1>
-  <p>YouTube字幕ダウンローダー（youtube-subtitle-app）は、ユーザーの個人情報を保存または追跡しません。</p>
-  <p>入力されたYouTubeリンクは字幕抽出のみに使用され、サーバーに保存されることはありません。</p>
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}プライバシーポリシー - YouTube字幕ダウンローダー{% endblock %}
+{% block content %}
+<h1>プライバシーポリシー</h1>
+<p>本サービスは個人情報を収集・保存・追跡しません。</p>
+<p>字幕の処理は一時的であり、サーバーに保存されることはありません。</p>
+{% endblock %}
