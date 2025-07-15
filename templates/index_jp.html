@@ -3,74 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>YouTube字幕抽出ツール</title>
+  <title>YouTube字幕ダウンローダー</title>
 
-  <!-- SEO -->
-  <meta name="description" content="YouTube動画の字幕を簡単に抽出。無料字幕ダウンロードツール。">
-  <meta name="keywords" content="YouTube 字幕 ダウンロード, 字幕 抽出, SRT変換">
+  <meta name="description" content="YouTube動画から字幕を簡単に抽出できます。無料SRTダウンロードツール。">
+  <meta name="keywords" content="YouTube字幕, 字幕ダウンロード, SRT抽出">
   <meta name="author" content="talktime.shop">
 
-  <!-- OG image removed -->
-  <meta property="og:title" content="YouTube字幕抽出ツール" />
-  <meta property="og:description" content="無料で字幕を簡単に抽出できます。" />
-  <meta property="og:url" content="https://talktime.shop/index_jp.html" />
+  <meta property="og:title" content="YouTube字幕ダウンローダー" />
+  <meta property="og:description" content="YouTubeから字幕を素早く無料で取得しましょう。" />
+  <meta property="og:url" content="https://talktime.shop/" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="YouTube字幕抽出ツール" />
-  <meta name="twitter:description" content="無料で字幕を抽出できます。" />
+  <meta name="twitter:title" content="YouTube字幕ダウンローダー" />
+  <meta name="twitter:description" content="YouTubeの字幕を簡単に抽出できます。" />
 
   <style>
-    body {
-      font-family: "Noto Sans JP", sans-serif;
-      margin: 0;
-      padding: 20px;
-      background-color: #fff;
-      color: #222;
-      transition: background-color 0.3s, color 0.3s;
-    }
-
-    h1 {
-      font-size: 28px;
-    }
-
-    footer {
-      margin-top: 40px;
-      font-size: 14px;
-    }
-
-    footer a {
-      margin-right: 10px;
-      text-decoration: none;
-      color: #555;
-    }
-
-    .dark-mode {
-      background-color: #1e1e1e;
-      color: #ddd;
-    }
-
-    .dark-mode input,
-    .dark-mode button {
-      background-color: #333;
-      color: #fff;
-    }
-
-    iframe {
-      width: 100%;
-      max-width: 480px;
-      height: 270px;
-      border: none;
-      margin-top: 20px;
-    }
-
-    .lang-switch {
-      margin-top: 10px;
-    }
-
-    .lang-switch a {
-      margin-right: 10px;
-      font-size: 13px;
-    }
+    body { font-family: sans-serif; padding: 20px; background: #fff; color: #222; transition: all 0.3s; }
+    .dark-mode { background: #1e1e1e; color: #ddd; }
+    .dark-mode input, .dark-mode button { background: #333; color: #fff; }
+    iframe { width: 100%; max-width: 480px; height: 270px; border: none; margin-top: 20px; }
+    footer { margin-top: 40px; font-size: 14px; }
+    footer a { margin-right: 10px; color: #555; text-decoration: none; }
+    .lang-switch { margin-top: 10px; }
+    .lang-switch a { margin-right: 10px; font-size: 13px; }
+    .alert { margin-top: 20px; padding: 12px; background-color: #fef2f2; color: #991b1b; border: 1px solid #fca5a5; border-radius: 6px; }
   </style>
 
   <script>
@@ -80,12 +36,18 @@
   </script>
 </head>
 <body>
-  <h1>YouTube字幕抽出ツール</h1>
+  <h1>YouTube字幕ダウンローダー</h1>
 
-  <form method="POST" action="/">
-    <input type="text" name="url" placeholder="YouTubeのリンクを入力してください" required style="width: 300px; padding: 5px;" />
+  <form method="POST">
+    <input type="text" name="url" placeholder="YouTube動画リンクを貼り付けてください" required style="width: 300px; padding: 5px;" />
     <button type="submit">字幕をダウンロード</button>
   </form>
+
+  {% if message %}
+    <div class="alert">
+      {{ message }}
+    </div>
+  {% endif %}
 
   <iframe src="https://www.youtube.com/embed/w-_45ib4HyU" allowfullscreen></iframe>
 
@@ -96,7 +58,7 @@
   </div>
 
   <div class="lang-switch">
-    <a href="/">한국어</a>
+    <a href="/index.html">한국어</a>
     <a href="/index_en.html">English</a>
   </div>
 
@@ -112,4 +74,5 @@
   </footer>
 </body>
 </html>
+
 
